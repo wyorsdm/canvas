@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Line-Canvas</title>
+  <style>
+    #canvas {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <script>
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+
+    // 样式	       描述
+    // lineCap	  设置或返回线条的结束端点样式
+    // lineJoin	  设置或返回两条线相交时，所创建的拐角类型
+    // lineWidth	设置或返回当前的线条宽度
+    // miterLimit	设置或返回最大斜接长度
+
+    ctx.beginPath();
+    ctx.moveTo(10, 10);
+    ctx.lineTo(200, 200);
+    ctx.lineWidth = 10;
+    ctx.lineCap = 'round';
+    ctx.strokeStyle = '#fff';
+    ctx.stroke();
+  </script>
+</body>
+</html>
