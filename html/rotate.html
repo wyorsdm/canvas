@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>rotate-Canvas</title>
+  <style>
+    #canvas {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <script>
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+
+    // 图形转换
+    // scale()	缩放当前绘图至更大或更小
+    // rotate()	旋转当前绘图
+    // translate()	重新映射画布上的 (0,0) 位置
+    // transform()	替换绘图的当前转换矩阵
+    // setTransform()	将当前转换重置为单位矩阵，然后运行 transform()
+
+    ctx.beginPath();
+    ctx.fillStyle = '#fff';
+    ctx.rotate(20 * Math.PI / 180);
+    ctx.fillRect(100, 100, 100, 100);
+    ctx.rotate(-20 * Math.PI / 180);
+    ctx.strokeStyle = '#f00';
+    ctx.strokeRect(50, 50, 50, 50)
+  </script>
+</body>
+</html>

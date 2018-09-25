@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>gradient-Canvas</title>
+  <style>
+    #canvas {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <script>
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+
+    // drawImage() 向画布上绘制图像、画布或视频
+    // context.drawImage(img,sx,sy,swidth,sheight,x,y,width,height);
+    
+    // img：规定要使用的图像、画布或视频
+    // sx：可选。开始剪切的 x 坐标位置
+    // sy：可选。开始剪切的 y 坐标位置
+    // swidth：可选。被剪切图像的宽度
+    // sheight：可选。被剪切图像的高度
+    // x：在画布上放置图像的 x 坐标位置
+    // y：在画布上放置图像的 y 坐标位置
+    // width：可选。要使用的图像的宽度（伸展或缩小图像）
+    // height：可选。要使用的图像的高度（伸展或缩小图像）
+
+    ctx.beginPath();
+    let grd = ctx.createLinearGradient(100, 100, 100, 300);
+    grd.addColorStop(0, 'rgb(255, 0, 0)');
+    grd.addColorStop(0.2, 'rgb(255, 165, 0)');
+    grd.addColorStop(0.3, 'rgb(255, 255, 0)');
+    grd.addColorStop(0.5, 'rgb(0, 255, 0)');
+    grd.addColorStop(0.7, 'rgb(0, 127, 255)');
+    grd.addColorStop(0.8, 'rgb(0, 0, 255)');
+    grd.addColorStop(1, 'rgb(139, 0, 255)');
+
+    ctx.fillStyle = grd;
+    ctx.fillRect(100, 100, 200, 200);
+  </script>
+</body>
+</html>

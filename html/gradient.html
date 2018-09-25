@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>gradient-Canvas</title>
+  <style>
+    #canvas {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="canvas" width="400" height="400"></canvas>
+  <script>
+    let canvas = document.getElementById('canvas');
+    let ctx = canvas.getContext('2d');
+
+    // createLinearGradient()	创建线性渐变（用在画布内容上）
+    // createPattern()	在指定的方向上重复指定的元素
+    // createRadialGradient()	创建放射状/环形的渐变（用在画布内容上）
+    // addColorStop()	规定渐变对象中的颜色和停止位置
+    // context.createLinearGradient(x0, y0, x1, y1);
+
+    ctx.beginPath();
+    let grd = ctx.createLinearGradient(100, 100, 100, 300);
+    grd.addColorStop(0, 'rgb(255, 0, 0)');
+    grd.addColorStop(0.2, 'rgb(255, 165, 0)');
+    grd.addColorStop(0.3, 'rgb(255, 255, 0)');
+    grd.addColorStop(0.5, 'rgb(0, 255, 0)');
+    grd.addColorStop(0.7, 'rgb(0, 127, 255)');
+    grd.addColorStop(0.8, 'rgb(0, 0, 255)');
+    grd.addColorStop(1, 'rgb(139, 0, 255)');
+
+    ctx.fillStyle = grd;
+    ctx.fillRect(100, 100, 200, 200);
+  </script>
+</body>
+</html>
